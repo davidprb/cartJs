@@ -27,7 +27,6 @@ const agregarALCarrito = (evento) => {
     // se agrega(empuja) el producto al carritoObj. tendra como nombre el titulo del producto y se le agregaran las propiedades del producto
     carritoObj[producto.titulo] = producto;
     
-    //console.log(carritoObj);
 
     pintarCarrito();
 }; 
