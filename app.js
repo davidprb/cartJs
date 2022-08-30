@@ -22,8 +22,26 @@ const agregarALCarrito = (evento) => {
     // se agrega(empuja) el producto al carritoObj. tendra como nombre el titulo del producto y se le agregaran las propiedades del producto
     carritoObj[producto.titulo] = producto;
     
-    console.log(carritoObj);
+    //console.log(carritoObj);
+
+    pintarCarrito();
 }; 
+
+//pintar el objeto carrito
+const pintarCarrito = () => {
+
+    cart.textContent = ""; //ya que cada vez q se cliquea un "agregar" se crea una lista nueva con el ultimo elemento y se pinta... agrego este vacio para que cada vez q vaya a pintar primero vacie la lista y luego pinte.
+
+    Object.values(carritoObj).forEach( item => {
+        const clon = tempLi.content.firstElementChild.cloneNode(true);  // el node.cloneNode(true) va a hacer que se clone el nodo (tempLi)y todos sus nodos hijos
+        clon.querySelector(".lead").textContent = item.titulo;
+        clon.querySelector(".badge").textContent = item.cantidad;
+
+        fragmento.appendChild(clon); //agrego el nodo clon con un item de carritoObjeto al fragmento
+    });
+
+    cart.appendChild(fragmento); //agrego todos los productos al carro... se pasan como nodo hijo del section-ul con id=carrito asi se pinta.
+};
 
 // detecta el boton mediante evento click, luego se ejecuta la funcion listener agregarAlCarrito
 botones.forEach(btn => {
