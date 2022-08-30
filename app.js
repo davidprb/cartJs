@@ -10,13 +10,18 @@ const carritoObj = {};
 
 const agregarALCarrito = (evento) => {
     // con la propiedad target obtengo la informacion del boton que se presiono. Con la propiedad dataset obtengo acceso de escritura/lectura de un atributo data-*
-    console.log(evento.target.dataset.fruta);
+    //console.log(evento.target.dataset.fruta);
     
     //se crea el objeto producto
     const producto = {
         titulo: evento.target.dataset.fruta,
         id: evento.target.dataset.fruta,
         cantidad: 1
+    };
+
+    //si ya existe el producto en el carrito se suma una unidad
+    if (carritoObj.hasOwnProperty(producto.titulo)) {
+        producto.cantidad = carritoObj[producto.titulo].cantidad +1;
     };
 
     // se agrega(empuja) el producto al carritoObj. tendra como nombre el titulo del producto y se le agregaran las propiedades del producto
