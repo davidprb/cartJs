@@ -22,7 +22,7 @@ const agregarALCarrito = (evento) => {
     //si ya existe el producto en el carrito se suma una unidad
     if (carritoObj.hasOwnProperty(producto.titulo)) {
         producto.cantidad = carritoObj[producto.titulo].cantidad +1;
-    };
+    }
 
     // se agrega(empuja) el producto al carritoObj. tendra como nombre el titulo del producto y se le agregaran las propiedades del producto
     carritoObj[producto.titulo] = producto;
