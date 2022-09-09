@@ -14,8 +14,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"> Frutilla 🍓</h5>
+                            <p class="lead">$300</p>
                             <button type="button" class="btn btn-outline-primary"
-                            data-fruta="Frutilla">Agregar</button>
+                            data-fruta="Frutilla" data-precio="300">Agregar</button>
                         </div>
                     </div>
                 </article>
@@ -24,8 +25,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"> Banana 🍌</h5>
+                            <p class="lead">$100</p>
                             <button type="button" class="btn btn-outline-primary"
-                            data-fruta="Banana">Agregar</button>
+                            data-fruta="Banana" data-precio="100">Agregar</button>
                         </div>
                     </div>
                 </article>
@@ -34,8 +36,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"> Sandía 🍉</h5>
+                            <p class="lead">$200</p>
                             <button type="button" class="btn btn-outline-primary"
-                            data-fruta="Sandía">Agregar</button>
+                            data-fruta="Sandía" data-precio="200">Agregar</button>
                         </div>
                     </div>
                 </article>
@@ -49,6 +52,18 @@
             </ul>
         </section>
 
+        <footer id="footer" class="container mt-3">
+            <template id="templateFooter">
+                <div class="card">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <p class="lead mb-0">Total $
+                            <span>1500</span>
+                        </p>
+                        <button type="button" class="btn btn-primary">Finalizar compra</button>
+                    </div>
+                </div>
+        </template>
+        </footer>
 
         <template id="templateLi">
             <li class="list-group-item d-flex justify-content-between align-items-center"> 
